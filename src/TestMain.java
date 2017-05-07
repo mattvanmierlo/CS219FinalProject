@@ -20,12 +20,11 @@ public class TestMain {
         File folder = new File("./resources");
         File[] listofFiles = folder.listFiles();
 
-        String[] generatedSelections = new String[listofFiles.length+1];
+        String[] generatedSelections = new String[listofFiles.length];
 
-        generatedSelections[0] = "default";
 
-        for(int i = 1; i < generatedSelections.length; i++){
-            generatedSelections[i] = listofFiles[i-1].getName();
+        for(int i = 0; i < generatedSelections.length; i++){
+            generatedSelections[i] = listofFiles[i].getName();
             generatedSelections[i] = generatedSelections[i].substring(0,generatedSelections[i].length() - 4);
         }
 
@@ -89,6 +88,8 @@ public class TestMain {
         selectionPanel.add(velocityXInput);
         selectionPanel.add(velocityYInput);
 
+
+        simulationFile.setSelectedIndex(0);
 
         //make a new BodyCollections object
         BodyCollection collection = new BodyCollection();

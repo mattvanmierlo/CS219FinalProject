@@ -91,6 +91,58 @@ public class DrawBodies extends JPanel implements ActionListener, ChangeListener
         timer = new Timer(100,this);
 
         timer.start();
+
+        String selectedItem = (String)fileSelection.getSelectedItem();
+
+        //make a new File object
+        File simulationFile;
+
+        //assign the simulation file
+        simulationFile = new File("./resources/" + (String)fileSelection.getSelectedItem() + ".txt");
+
+        //switch statement for the various selections
+        //array of file names
+        //name of the choice is actually the name of the file
+        //can concatenate the pathway
+
+        //stop the timer so that you see the page refresh
+        timer.stop();
+        startButton.setText("Start");
+        //if the document exists...
+        try {
+            //possible this will not find an error
+            Scanner scanner = new Scanner(simulationFile);
+
+            //scan for the following indicated values to add objects to the BodyCollections object
+            int index = scanner.nextInt();
+            double maxRadius = scanner.nextDouble();
+            maxOrbit = maxRadius;
+
+            collection.getBodyCollection().clear();
+
+            for (int i = 0; i < index; i++) {
+                //sequentially add MovingBody objects to the BodyCollections object
+                double xPos = scanner.nextDouble();
+                double yPos = scanner.nextDouble();
+                Point3D velocity = new Point3D(scanner.nextDouble(), scanner.nextDouble(), 0);
+                double mass = scanner.nextDouble();
+                String tempString = scanner.next();
+                collection.add(new MovingBody(xPos, yPos, mass, velocity));
+            }
+
+            System.out.println(collection.getBodyCollection().size() + " added to the list");
+            scalingFactor = windowWidth / 2 / maxOrbit;
+            //scalingFactor = (Math.sqrt(Math.pow(windowWidth/2,2)+ Math.pow(windowHeight/2,2)))/(maxOrbit);
+            super.repaint();
+
+            System.out.println(collection.getBodyCollection().size());
+
+            collection.force();
+
+        } catch (FileNotFoundException exception) {
+            System.err.println("File Not Found");
+        }
+
     }
 
     //overriding the default protected void paintComponent method
