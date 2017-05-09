@@ -30,8 +30,6 @@ public class TestMain {
 
         //just read this from the directory
         //make sure to not have to modify the files
-       /* String[] selections = new String[] {"1: Entropy Universe Simulation", "2: Armageddon",
-        "3: Four Ellipses", "4: Chaos Blossom", "5: SBH3 Simulation", "6: Galaxy"};*/
         JComboBox<String> simulationFile = new JComboBox<String>(generatedSelections);
         JButton startButton = new JButton("Start");
         JSlider speedSlider = new JSlider();
