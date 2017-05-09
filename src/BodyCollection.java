@@ -41,8 +41,8 @@ public class BodyCollection {
                     j++;
                 }
                 else{
-                   /* System.out.println(i + " " + j);*/
 
+                    //calculating the force components
                     double distanceXi = bodyCollection.get(i).getPositionComponents().getX();
                     double distanceYi = bodyCollection.get(i).getPositionComponents().getY();
 

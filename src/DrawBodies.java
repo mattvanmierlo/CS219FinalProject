@@ -156,9 +156,6 @@ public class DrawBodies extends JPanel implements ActionListener, ChangeListener
         //set the color/paintbrush to the specified color
         page.setColor(color);
 
-        //load the default file here!
-
-
         //draw each circle on the page
         for(int i = 0; i < collection.getBodyCollection().size() ; i++){
             page.setColor(color);
@@ -314,7 +311,7 @@ public class DrawBodies extends JPanel implements ActionListener, ChangeListener
 
 
             }else{
-                //print out the delay just to make sure that it is the correct value
+
             }
         }
 

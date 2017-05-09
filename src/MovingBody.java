@@ -51,16 +51,19 @@ public class MovingBody {
         return mass;
     }
 
+    //return force scalar
     public double getForce() {
 
         return force;
     }
 
+    //return position vector
     public Point3D getPositionComponents() {
 
         return positionComponents;
     }
 
+    //return force vector
     public Point3D getForceComponents() {
 
         return forceComponents;
@@ -75,20 +78,21 @@ public class MovingBody {
     }
 
 
+    //set the force scalar
     public void setForce(double force) {
 
         this.force = force;
     }
 
-
+    //get all the positions an object has been at
     public ArrayList<Point3D> getAllPositionComponents() {
         return allPositionComponents;
     }
 
-    //need to modify
+    //set the position of the objects. Update it.
     public void setPositionComponents(double timeDifference) {
-        //add the old coordinates in the object instance variable array
 
+        //add the old coordinates in the object instance variable array
         this.positionComponents = new Point3D((velocityComponents.getX() * timeDifference) + positionComponents.getX(),
                 (velocityComponents.getY() * timeDifference) + positionComponents.getY(),
                 (velocityComponents.getZ() * timeDifference) + positionComponents.getZ());
@@ -103,6 +107,7 @@ public class MovingBody {
 
     }
 
+    //limit the number of points that the position array remembers
     public void setTailSize(int tailSizeTemp) {
 
         tailSize = tailSizeTemp;
@@ -118,12 +123,13 @@ public class MovingBody {
         }
     }
 
+    //return the components of the velocity
     public Point3D getVelocityComponents() {
 
         return velocityComponents;
     }
 
-    //need to modify
+    //set the components of the velocity
     public void setVelocityComponents(double timeDifference) {
 
         this.velocityComponents = new Point3D((accelerationComponents.getX() * timeDifference) + velocityComponents.getX(),
@@ -131,6 +137,7 @@ public class MovingBody {
                 (accelerationComponents.getZ() * timeDifference) + velocityComponents.getZ());
     }
 
+    //return the acceleration components vector
     public Point3D getAccelerationComponents() {
 
         return accelerationComponents;
@@ -144,12 +151,13 @@ public class MovingBody {
     }
 
 
-
+    //set force components vector
     public void setForceComponents(Point3D forceComponents) {
 
         this.forceComponents = this.forceComponents.add(forceComponents);
     }
 
+    //reset the force components
     public void resetForceComponents(){
         forceComponents = new Point3D(0,0,0);
     }
