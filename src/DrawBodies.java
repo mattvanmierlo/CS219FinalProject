@@ -11,6 +11,12 @@ import java.util.Scanner;
 
 /**
  * Created by mattv on 4/29/2017.
+ * N Body Simulation Using Classic Gravity
+ * Matthijs van Mierlo
+ * mtvan15@stlawu.edu
+ *
+ * JPanel with different elements
+ * Reads files from directory
  */
 public class DrawBodies extends JPanel implements ActionListener, ChangeListener, MouseMotionListener, MouseListener {
 
@@ -27,6 +33,7 @@ public class DrawBodies extends JPanel implements ActionListener, ChangeListener
     private int objectSize = 20;
 
     //need to keep track of the JButton and the speedSlider
+    //and other elements for the panel
     private JSlider speedSlider;
     private JButton startButton;
     private JComboBox<String> fileSelection;
@@ -100,14 +107,10 @@ public class DrawBodies extends JPanel implements ActionListener, ChangeListener
         //assign the simulation file
         simulationFile = new File("./resources/" + (String)fileSelection.getSelectedItem() + ".txt");
 
-        //switch statement for the various selections
-        //array of file names
-        //name of the choice is actually the name of the file
-        //can concatenate the pathway
-
         //stop the timer so that you see the page refresh
         timer.stop();
         startButton.setText("Start");
+
         //if the document exists...
         try {
             //possible this will not find an error

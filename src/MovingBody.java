@@ -7,6 +7,11 @@ import java.util.Random;
 
 /**
  * Created by mattv on 4/29/2017.
+ * N Body Simulation Using Classic Gravity
+ * Matthijs van Mierlo
+ * mtvan15@stlawu.edu
+ *
+ * Moving Body Object
  */
 public class MovingBody {
 

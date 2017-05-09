@@ -4,6 +4,12 @@ import java.util.ArrayList;
 
 /**
  * Created by mattv on 4/29/2017.
+ * N Body Simulation Using Classic Gravity
+ * Matthijs van Mierlo
+ * mtvan15@stlawu.edu
+ *
+ * Class used to dynamically keep track of
+ * MovingBody objects
  */
 public class BodyCollection {
     private ArrayList<MovingBody> bodyCollection = new ArrayList<MovingBody>();
@@ -33,6 +39,10 @@ public class BodyCollection {
 
 
         for(int i = 0; i < bodyCollection.size() - 1; i++){
+
+            //algorithm I made to calculate all the possible permutations
+            // and permutations of force assignments
+            //inner and outer loop
 
             int j = i+1;
 
@@ -75,6 +85,8 @@ public class BodyCollection {
 
 
     }
+
+    //update the properties of the MovingBody objects
 
     public void update(double timeDifference){
         for(int i = 0; i<bodyCollection.size(); i++){
