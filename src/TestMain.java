@@ -97,7 +97,7 @@ public class TestMain {
         //make a new BodyCollections object
         BodyCollection collection = new BodyCollection();
 
-        DrawBodies draw = new DrawBodies(1000,1000, speedSlider, startButton, simulationFile, sizeSlider, tailSlider, massInput, velocityXInput, velocityYInput);
+        DrawBodies draw = new DrawBodies(700,700, speedSlider, startButton, simulationFile, sizeSlider, tailSlider, massInput, velocityXInput, velocityYInput);
 
         //add one panel within the other one
         animationPanel.add(selectionPanel, BorderLayout.PAGE_START);
